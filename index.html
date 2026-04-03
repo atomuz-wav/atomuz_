@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATOMUZ</title>
+    <style>
+        body, html {
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            overflow: hidden; background-color: #424242;
+            font-family: 'Arial', sans-serif;
+        }
+
+        #particles-js {
+            position: absolute; width: 100%; height: 100%; z-index: 1;
+        }
+
+        .main-container {
+            position: relative; z-index: 2;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            height: 100vh; color: white; text-align: center;
+            pointer-events: none;
+        }
+
+        /* Estilização da Logo */
+        .logo-img {
+            width: 600px; /* Ajuste o tamanho aqui */
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 10px;
+            /* Filtro para transformar a logo preta em Verde Limão (#7cfc00) */
+            filter: invert(74%) sepia(95%) saturate(1963%) hue-rotate(42deg) brightness(108%) contrast(118%);
+        }
+
+        .subtitle {
+            font-size: 20px; color: #cccccc;
+            margin-top: 20px; font-weight: 400; letter-spacing: 2px;
+        }
+
+        nav {
+            margin-top: 50px; display: flex; gap: 40px; pointer-events: auto;
+        }
+
+        nav a {
+            color: white; text-decoration: none; font-size: 26px;
+            font-weight: 500; transition: color 0.3s ease;
+        }
+
+        nav a:hover { color: #7cfc00; }
+
+        @media (max-width: 768px) {
+            .logo-img { width: 300px; }
+            nav { gap: 15px; flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <div class="main-container">
+        <img src="ATOMUZ-.png" alt="ATOMUZ Logo" class="logo-img">
+        
+        <div class="subtitle">
+            Psytrance &bull; Technology &bull; Science
+        </div>
+
+        <nav>
+            <a href="#">Music</a>
+            <a href="#">Sets</a>
+            <a href="#">Visuals</a>
+            <a href="#">About</a>
+            <a href="#">Bookings</a>
+        </nav>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#7cfc00" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.6, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": {
+                    "enable": true, "distance": 150, "color": "#7cfc00", "opacity": 0.4, "width": 1
+                },
+                "move": { "enable": true, "speed": 2.5, "out_mode": "out" }
+            },
+            "interactivity": {
+                "detect_on": "window",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": {
+                    "grab": { "distance": 250, "line_linked": { "opacity": 0.8 } },
+                    "push": { "particles_nb": 6 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
